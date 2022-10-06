@@ -1,0 +1,47 @@
+$darkgray: #E6D55C;
+
+@mixin header-link ($hover: true){
+    color: $darkgray;
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    @if $hover {
+        &:hover {
+            border-bottom: solid 2px $darkgray;
+        }
+    }
+
+}
+
+.header {
+    background-color: #5e8d92;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+
+    &__logo {
+        @include header-link(false);
+    }
+
+    &__nav-list {
+        display: flex;
+        list-style: none;
+        column-gap: 20px;
+    }
+
+    &__item-link {
+        @include header-link(true);
+        
+        &--is-active {
+            border-bottom: solid 2px #998F45;
+        }
+    }
+}
+
+btn-color{
+    background-color: #d6d1d1;
+    color: #E6D55C;
+}
